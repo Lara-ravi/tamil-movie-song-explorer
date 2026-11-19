@@ -1,0 +1,44 @@
+:root {
+  --box-bg: #ffffff;
+  --sidebar-bg: #ffffff;
+  --song-color: #1d3557;
+  --movie-color: #e63946;
+  --singer-color: #457b9d;
+  --play-bg: #2ecc71;
+  --like-bg: #ffe5ec;
+}
+
+.app { min-height: 100vh; padding: 20px; color: #222; }
+.header { text-align: center; margin-bottom: 20px; }
+.header h1 { margin: 0; }
+
+.layout { display: flex; gap: 20px; align-items: flex-start; }
+.songs { flex: 1; }
+.sidebar {
+  width: 260px; background: var(--sidebar-bg); padding: 16px;
+  border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky; top: 20px;
+}
+.sidebar input[type="text"], .sidebar input:not([type]), .sidebar select {
+  width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #aaa; box-sizing: border-box;
+}
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+.card {
+  background: var(--box-bg); border-radius: 12px; padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: left;
+}
+.song-name { margin: 0 0 8px; color: var(--song-color); }
+.movie-name { color: var(--movie-color); margin: 4px 0; }
+.singer-name { color: var(--singer-color); margin: 4px 0; }
+.meta { margin: 4px 0; }
+
+.actions { display: flex; gap: 8px; margin-top: 10px; }
+.actions button { padding: 6px 12px; border-radius: 6px; border: none; cursor: pointer; }
+.play-btn { background: var(--play-bg); color: white; }
+.like-btn { background: var(--like-bg); }
+
+@media (max-width: 800px) {
+  .layout { flex-direction: column-reverse; }
+  .sidebar { width: 100%; position: static; box-sizing: border-box; }
+}

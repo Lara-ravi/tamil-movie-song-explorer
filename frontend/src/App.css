@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --page-bg: #f4f7fb;
+  --box-bg: #9bb6ec;
+  --song-color: #170a2b;
+  --movie-color: #d40617;
+  --singer-color: #121424;
+  --play-bg: #c7f1ec;
+  --like-bg: #c2f5ec;
+  --btn-bg: #a7c4fc;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--page-bg);
+}
+
+.app {
+  min-height: 100vh;
+  padding: 20px;
+  background: var(--page-bg);
+  color: #222;
+}
+
+.header,
+.grid {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 0 0 16px;
+  color: #05031b;
+}
+
+
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.search-group {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  padding: 0 14px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 2px solid #000;
+}
+
+.filter-btn {
+  height: 46px;
+  padding: 0 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #000;
+  background: var(--btn-bg);
+  color: rgb(17, 11, 48);
+  cursor: pointer;
+}
+
+select.filter-btn {
+  width: 210px;
+  flex-shrink: 0;
+  padding: 0 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  text-align: center;
+  text-align-last: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--box-bg);
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 18px 16px;
+  text-align: center;
+  min-height: 150px;
+  font-size: 18px;
+}
+
+.card p {
+  margin: 6px 0;
+}
+
+.song-name {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--song-color);
+}
+
+.movie-name {
+  font-weight: 800;
+  color: var(--movie-color);
+}
+
+.singer-name {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--singer-color);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.actions button {
+  width: 110px;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+
+.play-btn {
+  background: var(--play-bg);
+  color: rgb(16, 4, 43);
+}
+
+.like-btn {
+  background: var(--like-bg);
+}
+
+@media (max-width: 700px) {
+  .controls { flex-wrap: wrap; }
+  .search-group { flex: 1 1 100%; }
+  select.filter-btn { flex: 1; width: auto; }
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+}
